@@ -34,6 +34,7 @@
 |1193. 분수찾기|[링크](./%EB%B0%B1%EC%A4%80/Silver/1193.%E2%80%85%EB%B6%84%EC%88%98%EC%B0%BE%EA%B8%B0/%EB%B6%84%EC%88%98%EC%B0%BE%EA%B8%B0.java)|
 |1316. 그룹 단어 체커|[링크](./%EB%B0%B1%EC%A4%80/Silver/1316.%E2%80%85%EA%B7%B8%EB%A3%B9%E2%80%85%EB%8B%A8%EC%96%B4%E2%80%85%EC%B2%B4%EC%BB%A4/%EA%B7%B8%EB%A3%B9%E2%80%85%EB%8B%A8%EC%96%B4%E2%80%85%EC%B2%B4%EC%BB%A4.java)|
 |1436. 영화감독 숌|[링크](./%EB%B0%B1%EC%A4%80/Silver/1436.%E2%80%85%EC%98%81%ED%99%94%EA%B0%90%EB%8F%85%E2%80%85%EC%88%8C/%EC%98%81%ED%99%94%EA%B0%90%EB%8F%85%E2%80%85%EC%88%8C.java)|
+|2563. 색종이|[링크](./%EB%B0%B1%EC%A4%80/Silver/2563.%E2%80%85%EC%83%89%EC%A2%85%EC%9D%B4/%EC%83%89%EC%A2%85%EC%9D%B4.java)|
 
 
- 🧨Total Solved Problems: 24
+ 🧨Total Solved Problems: 25
