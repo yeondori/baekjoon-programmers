@@ -52,8 +52,8 @@ def main():
                 solveds.append(category)
                 print("category : " + category)
 
-        totalStr = "\n\n 🧨Total Solved Problems: " + str(len(solveds))
-        content += totalStr
+    totalStr = "\n\n 🧨Total Solved Problems: " + str(len(solveds))
+    content += totalStr
 
     with open("README.md", "w") as fd:
         fd.write(content)
