@@ -24,6 +24,7 @@
 |2444. 별 찍기 － 7|[링크](./%EB%B0%B1%EC%A4%80/Bronze/2444.%E2%80%85%EB%B3%84%E2%80%85%EC%B0%8D%EA%B8%B0%E2%80%85%EF%BC%8D%E2%80%857/%EB%B3%84%E2%80%85%EC%B0%8D%EA%B8%B0%E2%80%85%EF%BC%8D%E2%80%857.java)|
 |2480. 주사위 세개|[링크](./%EB%B0%B1%EC%A4%80/Bronze/2480.%E2%80%85%EC%A3%BC%EC%82%AC%EC%9C%84%E2%80%85%EC%84%B8%EA%B0%9C/%EC%A3%BC%EC%82%AC%EC%9C%84%E2%80%85%EC%84%B8%EA%B0%9C.java)|
 |2501. 약수 구하기|[링크](./%EB%B0%B1%EC%A4%80/Bronze/2501.%E2%80%85%EC%95%BD%EC%88%98%E2%80%85%EA%B5%AC%ED%95%98%EA%B8%B0/%EC%95%BD%EC%88%98%E2%80%85%EA%B5%AC%ED%95%98%EA%B8%B0.java)|
+|2525. 오븐 시계|[링크](./%EB%B0%B1%EC%A4%80/Bronze/2525.%E2%80%85%EC%98%A4%EB%B8%90%E2%80%85%EC%8B%9C%EA%B3%84/%EC%98%A4%EB%B8%90%E2%80%85%EC%8B%9C%EA%B3%84.java)|
 ### 🚀 Silver
 | 문제번호 | 링크 |
 | ----- | ----- |
@@ -33,4 +34,4 @@
 |1436. 영화감독 숌|[링크](./%EB%B0%B1%EC%A4%80/Silver/1436.%E2%80%85%EC%98%81%ED%99%94%EA%B0%90%EB%8F%85%E2%80%85%EC%88%8C/%EC%98%81%ED%99%94%EA%B0%90%EB%8F%85%E2%80%85%EC%88%8C.java)|
 
 
- 🧨Total Solved Problems: 21
+ 🧨Total Solved Problems: 22
