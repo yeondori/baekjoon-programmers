@@ -27,6 +27,7 @@
 |2525. 오븐 시계|[링크](./%EB%B0%B1%EC%A4%80/Bronze/2525.%E2%80%85%EC%98%A4%EB%B8%90%E2%80%85%EC%8B%9C%EA%B3%84/%EC%98%A4%EB%B8%90%E2%80%85%EC%8B%9C%EA%B3%84.java)|
 |2557. Hello World|[링크](./%EB%B0%B1%EC%A4%80/Bronze/2557.%E2%80%85Hello%E2%80%85World/Hello%E2%80%85World.java)|
 |2562. 최댓값|[링크](./%EB%B0%B1%EC%A4%80/Bronze/2562.%E2%80%85%EC%B5%9C%EB%8C%93%EA%B0%92/%EC%B5%9C%EB%8C%93%EA%B0%92.java)|
+|2566. 최댓값|[링크](./%EB%B0%B1%EC%A4%80/Bronze/2566.%E2%80%85%EC%B5%9C%EB%8C%93%EA%B0%92/%EC%B5%9C%EB%8C%93%EA%B0%92.java)|
 ### 🚀 Silver
 | 문제번호 | 링크 |
 | ----- | ----- |
@@ -37,4 +38,4 @@
 |2563. 색종이|[링크](./%EB%B0%B1%EC%A4%80/Silver/2563.%E2%80%85%EC%83%89%EC%A2%85%EC%9D%B4/%EC%83%89%EC%A2%85%EC%9D%B4.java)|
 
 
- 🧨Total Solved Problems: 25
+ 🧨Total Solved Problems: 26
