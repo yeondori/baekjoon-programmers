@@ -35,6 +35,7 @@
 |2738. 행렬 덧셈|[링크](./%EB%B0%B1%EC%A4%80/Bronze/2738.%E2%80%85%ED%96%89%EB%A0%AC%E2%80%85%EB%8D%A7%EC%85%88/%ED%96%89%EB%A0%AC%E2%80%85%EB%8D%A7%EC%85%88.java)|
 |2739. 구구단|[링크](./%EB%B0%B1%EC%A4%80/Bronze/2739.%E2%80%85%EA%B5%AC%EA%B5%AC%EB%8B%A8/%EA%B5%AC%EA%B5%AC%EB%8B%A8.java)|
 |2743. 단어 길이 재기|[링크](./%EB%B0%B1%EC%A4%80/Bronze/2743.%E2%80%85%EB%8B%A8%EC%96%B4%E2%80%85%EA%B8%B8%EC%9D%B4%E2%80%85%EC%9E%AC%EA%B8%B0/%EB%8B%A8%EC%96%B4%E2%80%85%EA%B8%B8%EC%9D%B4%E2%80%85%EC%9E%AC%EA%B8%B0.java)|
+|2745. 진법 변환|[링크](./%EB%B0%B1%EC%A4%80/Bronze/2745.%E2%80%85%EC%A7%84%EB%B2%95%E2%80%85%EB%B3%80%ED%99%98/%EC%A7%84%EB%B2%95%E2%80%85%EB%B3%80%ED%99%98.java)|
 ### 🚀 Silver
 | 문제번호 | 링크 |
 | ----- | ----- |
@@ -45,4 +46,4 @@
 |2563. 색종이|[링크](./%EB%B0%B1%EC%A4%80/Silver/2563.%E2%80%85%EC%83%89%EC%A2%85%EC%9D%B4/%EC%83%89%EC%A2%85%EC%9D%B4.java)|
 
 
- 🧨Total Solved Problems: 33
+ 🧨Total Solved Problems: 34
