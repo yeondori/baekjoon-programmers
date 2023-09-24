@@ -51,7 +51,9 @@ def main():
                 content += "|{}|[링크]({})|\n".format(category, parse.quote(os.path.join(root, file)))
                 solveds.append(category)
                 print("category : " + category)
-        print("맞힌 문제: ", len(solveds))
+
+        totalStr = "\n\n 🧨Total Solved Problems: " + str(len(solveds))
+        content += totalStr
 
     with open("README.md", "w") as fd:
         fd.write(content)
