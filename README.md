@@ -38,6 +38,7 @@
 |2745. 진법 변환|[링크](./%EB%B0%B1%EC%A4%80/Bronze/2745.%E2%80%85%EC%A7%84%EB%B2%95%E2%80%85%EB%B3%80%ED%99%98/%EC%A7%84%EB%B2%95%E2%80%85%EB%B3%80%ED%99%98.java)|
 |2753. 윤년|[링크](./%EB%B0%B1%EC%A4%80/Bronze/2753.%E2%80%85%EC%9C%A4%EB%85%84/%EC%9C%A4%EB%85%84.java)|
 |2798. 블랙잭|[링크](./%EB%B0%B1%EC%A4%80/Bronze/2798.%E2%80%85%EB%B8%94%EB%9E%99%EC%9E%AD/%EB%B8%94%EB%9E%99%EC%9E%AD.java)|
+|2869. 달팽이는 올라가고 싶다|[링크](./%EB%B0%B1%EC%A4%80/Bronze/2869.%E2%80%85%EB%8B%AC%ED%8C%BD%EC%9D%B4%EB%8A%94%E2%80%85%EC%98%AC%EB%9D%BC%EA%B0%80%EA%B3%A0%E2%80%85%EC%8B%B6%EB%8B%A4/%EB%8B%AC%ED%8C%BD%EC%9D%B4%EB%8A%94%E2%80%85%EC%98%AC%EB%9D%BC%EA%B0%80%EA%B3%A0%E2%80%85%EC%8B%B6%EB%8B%A4.java)|
 ### 🚀 Silver
 | 문제번호 | 링크 |
 | ----- | ----- |
@@ -49,4 +50,4 @@
 |2839. 설탕 배달|[링크](./%EB%B0%B1%EC%A4%80/Silver/2839.%E2%80%85%EC%84%A4%ED%83%95%E2%80%85%EB%B0%B0%EB%8B%AC/%EC%84%A4%ED%83%95%E2%80%85%EB%B0%B0%EB%8B%AC.java)|
 
 
- 🧨Total Solved Problems: 37
+ 🧨Total Solved Problems: 38
