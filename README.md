@@ -105,6 +105,7 @@
 |1018. 체스판 다시 칠하기|[링크](./%EB%B0%B1%EC%A4%80/Silver/1018.%E2%80%85%EC%B2%B4%EC%8A%A4%ED%8C%90%E2%80%85%EB%8B%A4%EC%8B%9C%E2%80%85%EC%B9%A0%ED%95%98%EA%B8%B0/%EC%B2%B4%EC%8A%A4%ED%8C%90%E2%80%85%EB%8B%A4%EC%8B%9C%E2%80%85%EC%B9%A0%ED%95%98%EA%B8%B0.java)|
 |10828. 스택|[링크](./%EB%B0%B1%EC%A4%80/Silver/10828.%E2%80%85%EC%8A%A4%ED%83%9D/README.md)|
 |10845. 큐|[링크](./%EB%B0%B1%EC%A4%80/Silver/10845.%E2%80%85%ED%81%90/%ED%81%90.java)|
+|10866. 덱|[링크](./%EB%B0%B1%EC%A4%80/Silver/10866.%E2%80%85%EB%8D%B1/%EB%8D%B1.java)|
 |1158. 요세푸스 문제|[링크](./%EB%B0%B1%EC%A4%80/Silver/1158.%E2%80%85%EC%9A%94%EC%84%B8%ED%91%B8%EC%8A%A4%E2%80%85%EB%AC%B8%EC%A0%9C/%EC%9A%94%EC%84%B8%ED%91%B8%EC%8A%A4%E2%80%85%EB%AC%B8%EC%A0%9C.java)|
 |1193. 분수찾기|[링크](./%EB%B0%B1%EC%A4%80/Silver/1193.%E2%80%85%EB%B6%84%EC%88%98%EC%B0%BE%EA%B8%B0/README.md)|
 |1316. 그룹 단어 체커|[링크](./%EB%B0%B1%EC%A4%80/Silver/1316.%E2%80%85%EA%B7%B8%EB%A3%B9%E2%80%85%EB%8B%A8%EC%96%B4%E2%80%85%EC%B2%B4%EC%BB%A4/README.md)|
@@ -119,4 +120,4 @@
 |9012. 괄호|[링크](./%EB%B0%B1%EC%A4%80/Silver/9012.%E2%80%85%EA%B4%84%ED%98%B8/README.md)|
 
 
- 🧨Total Solved Problems: 107
+ 🧨Total Solved Problems: 108
