@@ -99,6 +99,10 @@
 |9093. 단어 뒤집기|[링크](./%EB%B0%B1%EC%A4%80/Bronze/9093.%E2%80%85%EB%8B%A8%EC%96%B4%E2%80%85%EB%92%A4%EC%A7%91%EA%B8%B0/%EB%8B%A8%EC%96%B4%E2%80%85%EB%92%A4%EC%A7%91%EA%B8%B0.java)|
 |9498. 시험 성적|[링크](./%EB%B0%B1%EC%A4%80/Bronze/9498.%E2%80%85%EC%8B%9C%ED%97%98%E2%80%85%EC%84%B1%EC%A0%81/%EC%8B%9C%ED%97%98%E2%80%85%EC%84%B1%EC%A0%81.java)|
 |9506. 약수들의 합|[링크](./%EB%B0%B1%EC%A4%80/Bronze/9506.%E2%80%85%EC%95%BD%EC%88%98%EB%93%A4%EC%9D%98%E2%80%85%ED%95%A9/README.md)|
+### 🚀 Gold
+| 문제번호 | 링크 |
+| ----- | ----- |
+|17298. 오큰수|[링크](./%EB%B0%B1%EC%A4%80/Gold/17298.%E2%80%85%EC%98%A4%ED%81%B0%EC%88%98/%EC%98%A4%ED%81%B0%EC%88%98.java)|
 ### 🚀 Silver
 | 문제번호 | 링크 |
 | ----- | ----- |
@@ -122,4 +126,4 @@
 |9012. 괄호|[링크](./%EB%B0%B1%EC%A4%80/Silver/9012.%E2%80%85%EA%B4%84%ED%98%B8/README.md)|
 
 
- 🧨Total Solved Problems: 110
+ 🧨Total Solved Problems: 111
