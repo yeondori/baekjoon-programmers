@@ -25,18 +25,21 @@ public class Main {
         for (int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine());
             for (int j = 0; j < m; j++) {
-                String input = st.nextToken();
-                if (input.equals("2")) {
+                map[i][j] = Integer.parseInt(st.nextToken());
+                if (map[i][j] == 2) {
                     targetX = i;
                     targetY = j;
                 }
-                map[i][j] = Integer.parseInt(input);
                 sol[i][j] = -1;
             }
         }
 
         bfs(targetX, targetY);
 
+        printSol();
+    }
+
+    private static void printSol() {
         for (int i = 0; i < sol.length; i++) {
             for (int j = 0; j < sol[i].length; j++) {
                 if (map[i][j] == 0) {
@@ -71,7 +74,7 @@ public class Main {
                         queue.offer(new int[]{nx, ny});
                         visited[nx][ny] = true;
                         sol[nx][ny] = sol[x][y] + 1;
-                    } 
+                    }
                 }
             }
         }
