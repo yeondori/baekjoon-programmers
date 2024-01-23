@@ -6,12 +6,15 @@ import java.util.*;
 public class Main {
     static final int INPUT_NUM = 6;
     static final int PUZZLE_NUM = 3;
+    static List<String> input = new ArrayList<>(INPUT_NUM);
+    static Set<String> answers = new HashSet<>();
+    
+    //순열
     static int[] target = new int[]{0, 1, 2, 3, 4, 5};
     static boolean[] visited = new boolean[INPUT_NUM];
     static int[] result = new int[PUZZLE_NUM];
 
-    static List<String> input = new ArrayList<>(INPUT_NUM);
-    static Set<String> answers = new HashSet<>();
+    static boolean solved = false;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -19,13 +22,16 @@ public class Main {
             input.add(br.readLine());
         }
 
-        permutation(0);
+        findAndAddAnswers(0);
 
-        String firstAnswer = answers.stream()
-                .min(Comparator.naturalOrder())
-                .orElse("0");
-
-        printAnswer(firstAnswer);
+//        String firstAnswer = answers.stream()
+//                .min(Comparator.naturalOrder())
+//                .orElse("0");
+//
+//        printAnswer(firstAnswer);
+        if(!solved) {
+            System.out.println(0);
+        }
     }
 
     static String generatePuzzle(int[] index) {
@@ -39,6 +45,7 @@ public class Main {
         }
 
         if (validatePuzzle(puzzle, leftInput)) {
+            solved = true;
             return Arrays.stream(puzzle)
                     .flatMap(Arrays::stream)
                     .collect(StringBuilder::new, StringBuilder::append, StringBuilder::append)
@@ -62,11 +69,12 @@ public class Main {
         return leftInput.isEmpty();
     }
 
-    private static void permutation(int cnt) {
+    private static void findAndAddAnswers(int cnt) {
         if (cnt == PUZZLE_NUM) {
             String answer = generatePuzzle(result);
             if (answer != null) {
-                answers.add(answer);
+//                answers.add(answer);
+                printAnswer(answer);
             }
             return;
         }
@@ -77,8 +85,12 @@ public class Main {
             }
             visited[i] = true;
             result[cnt] = target[i];
-            permutation(cnt + 1);
+            findAndAddAnswers(cnt + 1);
             visited[i] = false;
+
+            if(solved) {
+                return;
+            }
         }
     }
 
