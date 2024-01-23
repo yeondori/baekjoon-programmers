@@ -2,7 +2,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class Main {
     static final int INPUT_NUM = 6;
@@ -12,10 +11,7 @@ public class Main {
     static int[] result = new int[PUZZLE_NUM];
 
     static List<String> input = new ArrayList<>(INPUT_NUM);
-
-    static boolean solved = false;
-
-    static List<String> answers = new ArrayList<>(100);
+    static Set<String> answers = new HashSet<>();
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -25,12 +21,14 @@ public class Main {
 
         permutation(0);
 
-        Optional<String> firstAnswer = answers.stream()
-                .min(Comparator.naturalOrder());
-        printAnswer(firstAnswer.orElse("0"));
+        String firstAnswer = answers.stream()
+                .min(Comparator.naturalOrder())
+                .orElse("0");
+
+        printAnswer(firstAnswer);
     }
 
-    static String makePuzzle(int[] index) {
+    static String generatePuzzle(int[] index) {
         String[][] puzzle = new String[PUZZLE_NUM][PUZZLE_NUM];
         List<String> leftInput = new ArrayList<>(input);
 
@@ -39,11 +37,12 @@ public class Main {
             leftInput.remove(input.get(idx));
             puzzle[i] = input.get(idx).split("");
         }
+
         if (validatePuzzle(puzzle, leftInput)) {
-            solved = true;
             return Arrays.stream(puzzle)
                     .flatMap(Arrays::stream)
-                    .collect(Collectors.joining(""));
+                    .collect(StringBuilder::new, StringBuilder::append, StringBuilder::append)
+                    .toString();
         }
         return null;
     }
@@ -65,25 +64,20 @@ public class Main {
 
     private static void permutation(int cnt) {
         if (cnt == PUZZLE_NUM) {
-            String answer = makePuzzle(result);
-            if (solved && answer != null) {
+            String answer = generatePuzzle(result);
+            if (answer != null) {
                 answers.add(answer);
             }
             return;
         }
-        // 대상 집합을 순회하며 숫자를 하나 선택한다.
+
         for (int i = 0; i < INPUT_NUM; i++) {
-            // 이미 해당 숫자를 선택한 경우에는 스킵.
             if (visited[i]) {
                 continue;
             }
-            // 선택하지 않은 경우, 선택했다는 표시를 해준다.
             visited[i] = true;
-            // 숫자를 담는다.
             result[cnt] = target[i];
-            // 자신을 재귀 호출한다.
             permutation(cnt + 1);
-            // 선택을 해제한다.
             visited[i] = false;
         }
     }
@@ -95,7 +89,7 @@ public class Main {
         }
         for (int i = 0; i < answer.length(); i++) {
             System.out.print(answer.charAt(i));
-            if ((i+1)%3 == 0) {
+            if ((i + 1) % 3 == 0) {
                 System.out.println();
             }
         }
