@@ -7,14 +7,12 @@ public class Main {
     static final int INPUT_NUM = 6;
     static final int PUZZLE_NUM = 3;
     static List<String> input = new ArrayList<>(INPUT_NUM);
-    static Set<String> answers = new HashSet<>();
-    
+    static boolean solved = false;
+
     //순열
-    static int[] target = new int[]{0, 1, 2, 3, 4, 5};
     static boolean[] visited = new boolean[INPUT_NUM];
     static int[] result = new int[PUZZLE_NUM];
 
-    static boolean solved = false;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -22,19 +20,14 @@ public class Main {
             input.add(br.readLine());
         }
 
-        findAndAddAnswers(0);
+        findAnswers(0);
 
-//        String firstAnswer = answers.stream()
-//                .min(Comparator.naturalOrder())
-//                .orElse("0");
-//
-//        printAnswer(firstAnswer);
         if(!solved) {
             System.out.println(0);
         }
     }
 
-    static String generatePuzzle(int[] index) {
+    static String[][] generatePuzzle(int[] index) {
         String[][] puzzle = new String[PUZZLE_NUM][PUZZLE_NUM];
         List<String> leftInput = new ArrayList<>(input);
 
@@ -46,10 +39,7 @@ public class Main {
 
         if (validatePuzzle(puzzle, leftInput)) {
             solved = true;
-            return Arrays.stream(puzzle)
-                    .flatMap(Arrays::stream)
-                    .collect(StringBuilder::new, StringBuilder::append, StringBuilder::append)
-                    .toString();
+            return puzzle;
         }
         return null;
     }
@@ -69,11 +59,10 @@ public class Main {
         return leftInput.isEmpty();
     }
 
-    private static void findAndAddAnswers(int cnt) {
+    private static void findAnswers(int cnt) {
         if (cnt == PUZZLE_NUM) {
-            String answer = generatePuzzle(result);
+            String[][] answer = generatePuzzle(result);
             if (answer != null) {
-//                answers.add(answer);
                 printAnswer(answer);
             }
             return;
@@ -84,8 +73,8 @@ public class Main {
                 continue;
             }
             visited[i] = true;
-            result[cnt] = target[i];
-            findAndAddAnswers(cnt + 1);
+            result[cnt] = i;
+            findAnswers(cnt + 1);
             visited[i] = false;
 
             if(solved) {
@@ -94,16 +83,12 @@ public class Main {
         }
     }
 
-    private static void printAnswer(String answer) {
-        if (answer.equals("0")) {
-            System.out.println(answer);
-            return;
-        }
-        for (int i = 0; i < answer.length(); i++) {
-            System.out.print(answer.charAt(i));
-            if ((i + 1) % 3 == 0) {
-                System.out.println();
+    private static void printAnswer(String[][] answer) {
+        for (int i = 0; i <PUZZLE_NUM; i++) {
+            for (int j = 0; j < PUZZLE_NUM; j++) {
+                System.out.print(answer[i][j]);
             }
+            System.out.println();
         }
     }
 }
