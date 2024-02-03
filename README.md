@@ -122,6 +122,7 @@
 ### 🚀 Silver
 | 문제번호 | 링크 |
 | ----- | ----- |
+|10164. 격자상의 경로|[링크](./%EB%B0%B1%EC%A4%80/Silver/10164.%E2%80%85%EA%B2%A9%EC%9E%90%EC%83%81%EC%9D%98%E2%80%85%EA%B2%BD%EB%A1%9C/README.md)|
 |1018. 체스판 다시 칠하기|[링크](./%EB%B0%B1%EC%A4%80/Silver/1018.%E2%80%85%EC%B2%B4%EC%8A%A4%ED%8C%90%E2%80%85%EB%8B%A4%EC%8B%9C%E2%80%85%EC%B9%A0%ED%95%98%EA%B8%B0/README.md)|
 |10799. 쇠막대기|[링크](./%EB%B0%B1%EC%A4%80/Silver/10799.%E2%80%85%EC%87%A0%EB%A7%89%EB%8C%80%EA%B8%B0/README.md)|
 |10828. 스택|[링크](./%EB%B0%B1%EC%A4%80/Silver/10828.%E2%80%85%EC%8A%A4%ED%83%9D/README.md)|
@@ -169,4 +170,4 @@
 |181951. a와 b 출력하기|[링크](./%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/unrated/181951.%E2%80%85a%EC%99%80%E2%80%85b%E2%80%85%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0/README.md)|
 
 
- 🧨Total Solved Problems: 138
+ 🧨Total Solved Problems: 139
