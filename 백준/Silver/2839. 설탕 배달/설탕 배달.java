@@ -1,35 +1,27 @@
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Main {
+    static int N;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int N = Integer.parseInt(br.readLine());
+        N = Integer.parseInt(br.readLine());
 
-        if (N>=5) {
-            if (N%5==0) {
-                System.out.println(N/5);
-            }
-            else {
-                int Q = N/5;
-                int R = N%5;
+        int answer = -1; // 초기값을 -1로 설정하여 조건에 해당하는 경우가 없을 때의 처리를 위해 변경합니다.
 
-                while(true) {
-                    if (R % 3 == 0) {
-                        System.out.println(Q + (R / 3));
-                        break;
-                    } else {
-                        Q--;
-                        R += 5;
-                    }
-                    if (R==N) {
-                        System.out.println(((R % 3) == 0) ? (R / 3) : -1);
-                        break;
-                    }
+        // 5킬로그램 봉지로 가능한 경우부터 탐색합니다.
+        for (int i = 0; i <= N / 5; i++) {
+            int remainder = N - (5 * i);
+            if (remainder % 3 == 0) {
+                int bags = i + remainder / 3;
+                if (answer == -1 || bags < answer) {
+                    answer = bags;
                 }
             }
         }
-        else System.out.println(N==3? 1: -1);
 
+        System.out.println(answer);
     }
 }
