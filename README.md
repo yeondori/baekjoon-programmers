@@ -127,6 +127,7 @@
 |17298. 오큰수|[링크](./%EB%B0%B1%EC%A4%80/Gold/17298.%E2%80%85%EC%98%A4%ED%81%B0%EC%88%98/README.md)|
 |1987. 알파벳|[링크](./%EB%B0%B1%EC%A4%80/Gold/1987.%E2%80%85%EC%95%8C%ED%8C%8C%EB%B2%B3/README.md)|
 |2023. 신기한 소수|[링크](./%EB%B0%B1%EC%A4%80/Gold/2023.%E2%80%85%EC%8B%A0%EA%B8%B0%ED%95%9C%E2%80%85%EC%86%8C%EC%88%98/README.md)|
+|2565. 전깃줄|[링크](./%EB%B0%B1%EC%A4%80/Gold/2565.%E2%80%85%EC%A0%84%EA%B9%83%EC%A4%84/README.md)|
 ### 🚀 Gold V
 | 문제번호 | 링크 |
 | ----- | ----- |
@@ -188,4 +189,4 @@
 |181951. a와 b 출력하기|[링크](./%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/unrated/181951.%E2%80%85a%EC%99%80%E2%80%85b%E2%80%85%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0/README.md)|
 
 
- 🧨Total Solved Problems: 148
+ 🧨Total Solved Problems: 149
