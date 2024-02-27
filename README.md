@@ -151,6 +151,7 @@
 |10845. 큐|[링크](./%EB%B0%B1%EC%A4%80/Silver/10845.%E2%80%85%ED%81%90/README.md)|
 |10866. 덱|[링크](./%EB%B0%B1%EC%A4%80/Silver/10866.%E2%80%85%EB%8D%B1/README.md)|
 |10971. 외판원 순회 2|[링크](./%EB%B0%B1%EC%A4%80/Silver/10971.%E2%80%85%EC%99%B8%ED%8C%90%EC%9B%90%E2%80%85%EC%88%9C%ED%9A%8C%E2%80%852/README.md)|
+|1149. RGB거리|[링크](./%EB%B0%B1%EC%A4%80/Silver/1149.%E2%80%85RGB%EA%B1%B0%EB%A6%AC/README.md)|
 |1158. 요세푸스 문제|[링크](./%EB%B0%B1%EC%A4%80/Silver/1158.%E2%80%85%EC%9A%94%EC%84%B8%ED%91%B8%EC%8A%A4%E2%80%85%EB%AC%B8%EC%A0%9C/README.md)|
 |11725. 트리의 부모 찾기|[링크](./%EB%B0%B1%EC%A4%80/Silver/11725.%E2%80%85%ED%8A%B8%EB%A6%AC%EC%9D%98%E2%80%85%EB%B6%80%EB%AA%A8%E2%80%85%EC%B0%BE%EA%B8%B0/README.md)|
 |1193. 분수찾기|[링크](./%EB%B0%B1%EC%A4%80/Silver/1193.%E2%80%85%EB%B6%84%EC%88%98%EC%B0%BE%EA%B8%B0/README.md)|
@@ -194,4 +195,4 @@
 |181951. a와 b 출력하기|[링크](./%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/unrated/181951.%E2%80%85a%EC%99%80%E2%80%85b%E2%80%85%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0/README.md)|
 
 
- 🧨Total Solved Problems: 154
+ 🧨Total Solved Problems: 155
