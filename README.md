@@ -19,6 +19,10 @@
 | 문제번호 | 링크 |
 | ----- | ----- |
 |7208. 지도 칠하기|[링크](./SWEA/D4/7208.%E2%80%85%EC%A7%80%EB%8F%84%E2%80%85%EC%B9%A0%ED%95%98%EA%B8%B0/README.md)|
+### 🚀 Unrated
+| 문제번호 | 링크 |
+| ----- | ----- |
+|1767. ［SW Test 샘플문제］ 프로세서 연결하기|[링크](./SWEA/Unrated/1767.%E2%80%85%EF%BC%BBSW%E2%80%85Test%E2%80%85%EC%83%98%ED%94%8C%EB%AC%B8%EC%A0%9C%EF%BC%BD%E2%80%85%ED%94%84%EB%A1%9C%EC%84%B8%EC%84%9C%E2%80%85%EC%97%B0%EA%B2%B0%ED%95%98%EA%B8%B0/README.md)|
 ## 📚 백준
 ### 🚀 Bronze
 | 문제번호 | 링크 |
@@ -197,4 +201,4 @@
 |181951. a와 b 출력하기|[링크](./%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/unrated/181951.%E2%80%85a%EC%99%80%E2%80%85b%E2%80%85%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0/README.md)|
 
 
- 🧨Total Solved Problems: 157
+ 🧨Total Solved Problems: 158
