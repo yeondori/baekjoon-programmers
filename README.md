@@ -1,14 +1,7 @@
-# 백준 & 프로그래머스 문제 풀이 목록 <a name="top"></a>
-
-[SWEA](#swea)   
-[백준](#boj)    
-[프로그래머스](#pgm)  
-
-[코드 참고](https://velog.io/@betterfuture4/%EA%B9%83%ED%97%88%EB%B8%8C-%EC%9E%94%EB%94%94%EC%97%90-%EB%AC%BC-%EC%A3%BC%EA%B8%B0feat.BaekjoonHub%EB%A1%9C-%EB%B0%B1%EC%A4%80-%EB%AC%B8%EC%A0%9C-%EC%9E%90%EB%8F%99-%EC%97%85%EB%A1%9C%EB%93%9C)  
-
----
-
-## 📚 SWEA <a name="swea"></a> [Top](#top)
+# 
+# 백준 & 프로그래머스 문제 풀이 목록 코드 참고
+# 프로그래머스의 경우, 푼 문제 목록에 대한 마이그레이션이 필요합니다.
+## 📚 SWEA
 ### 🚀 D2
 | 문제번호 | 링크 |
 | ----- | ----- |
@@ -27,7 +20,7 @@
 | 문제번호 | 링크 |
 | ----- | ----- |
 |1767. ［SW Test 샘플문제］ 프로세서 연결하기|[링크](./SWEA/Unrated/1767.%E2%80%85%EF%BC%BBSW%E2%80%85Test%E2%80%85%EC%83%98%ED%94%8C%EB%AC%B8%EC%A0%9C%EF%BC%BD%E2%80%85%ED%94%84%EB%A1%9C%EC%84%B8%EC%84%9C%E2%80%85%EC%97%B0%EA%B2%B0%ED%95%98%EA%B8%B0/README.md)|
-## 📚 백준 <a name="boj"></a> [Top](#top)
+## 📚 백준
 ### 🚀 Bronze
 | 문제번호 | 링크 |
 | ----- | ----- |
@@ -189,8 +182,7 @@
 |2941. 크로아티아 알파벳|[링크](./%EB%B0%B1%EC%A4%80/Silver/2941.%E2%80%85%ED%81%AC%EB%A1%9C%EC%95%84%ED%8B%B0%EC%95%84%E2%80%85%EC%95%8C%ED%8C%8C%EB%B2%B3/README.md)|
 |4889. 안정적인 문자열|[링크](./%EB%B0%B1%EC%A4%80/Silver/4889.%E2%80%85%EC%95%88%EC%A0%95%EC%A0%81%EC%9D%B8%E2%80%85%EB%AC%B8%EC%9E%90%EC%97%B4/README.md)|
 |9012. 괄호|[링크](./%EB%B0%B1%EC%A4%80/Silver/9012.%E2%80%85%EA%B4%84%ED%98%B8/README.md)|
-
-## 📚 프로그래머스 <a name="pgm"></a> [Top](#top)
+## 📚 프로그래머스
 ### 🚀 1
 | 문제번호 | 링크 |
 | ----- | ----- |
@@ -205,8 +197,5 @@
 |181947. 덧셈식 출력하기|[링크](./%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/unrated/181947.%E2%80%85%EB%8D%A7%EC%85%88%EC%8B%9D%E2%80%85%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0/README.md)|
 |181951. a와 b 출력하기|[링크](./%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/unrated/181951.%E2%80%85a%EC%99%80%E2%80%85b%E2%80%85%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0/README.md)|
 
---- 
 
- 🧨Total Solved Problems: 159  
-
-[Top](#top)
+ 🧨Total Solved Problems: 159
