@@ -9,7 +9,7 @@ public class Solution {
 
     static int T, N;
     static boolean[][] board;
-    static int answer;
+
     static List<int[]> cells;
     static int cellSize, maxCellCount, minWire;
     static int[] dx = {-1, 1, 0, 0};
@@ -65,12 +65,11 @@ public class Solution {
         int x = cells.get(cellIdx)[0];
         int y = cells.get(cellIdx)[1];
 
-        // dfs() 내가 해당 코어를 선택하지 않았을 때
+        // 해당 코어를 선택하지 않았을 때
         dfs(wire, cellIdx + 1, cellCount);
-        // 코어를 선택할 때
+        // 해당 코어를 선택할 때
         for (int i = 0; i < 4; i++) {
             boolean isInterrupted = false;
-
             int nx = x + dx[i];
             int ny = y + dy[i];
 
@@ -100,25 +99,13 @@ public class Solution {
 
     private static void setBoard(int cellIdx, int dir, boolean setValue) {
         int[] cur = cells.get(cellIdx);
-        if (dir == 0) {     // 상
-            for (int i = cur[0] - 1; i >= 0; i--) {
+        if (dir < 2) {     // 상, 하
+            for (int i = cur[0] + dx[dir]; i >= 0 && i < N; i += dx[dir]) {
                 board[i][cur[1]] = setValue;
             }
             return;
         }
-        if (dir == 1) {     // 하
-            for (int i = cur[0] + 1; i < N; i++) {
-                board[i][cur[1]] = setValue;
-            }
-            return;
-        }
-        if (dir == 2) {     // 좌
-            for (int i = cur[1] - 1; i >= 0; i--) {
-                board[cur[0]][i] = setValue;
-            }
-            return;
-        }
-        for (int i = cur[1] + 1; i < N; i++) {     // 우
+        for (int i = cur[1] + dy[dir]; i>=0 && i < N; i+=dy[dir]) {     // 우
             board[cur[0]][i] = setValue;
         }
     }
