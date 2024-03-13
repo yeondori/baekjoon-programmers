@@ -129,6 +129,7 @@
 | 문제번호 | 링크 |
 | ----- | ----- |
 |10026. 적록색약|[링크](./%EB%B0%B1%EC%A4%80/Gold/10026.%E2%80%85%EC%A0%81%EB%A1%9D%EC%83%89%EC%95%BD/%EC%A0%81%EB%A1%9D%EC%83%89%EC%95%BD.java)|
+|1043. 거짓말|[링크](./%EB%B0%B1%EC%A4%80/Gold/1043.%E2%80%85%EA%B1%B0%EC%A7%93%EB%A7%90/README.md)|
 |1062. 가르침|[링크](./%EB%B0%B1%EC%A4%80/Gold/1062.%E2%80%85%EA%B0%80%EB%A5%B4%EC%B9%A8/README.md)|
 |14500. 테트로미노|[링크](./%EB%B0%B1%EC%A4%80/Gold/14500.%E2%80%85%ED%85%8C%ED%8A%B8%EB%A1%9C%EB%AF%B8%EB%85%B8/README.md)|
 |14502. 연구소|[링크](./%EB%B0%B1%EC%A4%80/Gold/14502.%E2%80%85%EC%97%B0%EA%B5%AC%EC%86%8C/README.md)|
@@ -216,4 +217,4 @@
 |181951. a와 b 출력하기|[링크](./%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/unrated/181951.%E2%80%85a%EC%99%80%E2%80%85b%E2%80%85%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0/README.md)|
 
 
- 🧨Total Solved Problems: 172
+ 🧨Total Solved Problems: 173
