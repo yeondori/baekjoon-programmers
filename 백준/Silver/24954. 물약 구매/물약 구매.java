@@ -55,7 +55,6 @@ public class Main {
 
     private static void getCoinCount() {
         answer = Integer.MAX_VALUE;
-        Arrays.sort(orders);
         do {
             int[] discountPrices = prices.clone(); 
             int curCoin = 0;
