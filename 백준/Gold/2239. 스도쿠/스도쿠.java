@@ -7,9 +7,7 @@ import java.util.List;
 public class Main {
     final static int SIZE = 9;
     static int[][] sudoku = new int[SIZE][SIZE];
-    static int[] row = new int[SIZE];
-    static int[] col = new int[SIZE];
-    static int[] block = new int[SIZE];
+    static int[] row = new int[SIZE], col = new int[SIZE], block = new int[SIZE];
 
     static class Pos {
         int x;
@@ -28,9 +26,9 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         blanks = new ArrayList<>();
         for (int i = 0; i < SIZE; i++) {
-            String[] input = br.readLine().split("");
+            String input = br.readLine();
             for (int j = 0; j < SIZE; j++) {
-                int num = Integer.parseInt(input[j]);
+                int num = input.charAt(j) - '0';
                 sudoku[i][j] = num;
                 if (num == 0) {
                     blanks.add(new Pos(i, j));
