@@ -161,6 +161,7 @@
 |2482. 색상환|[링크](./%EB%B0%B1%EC%A4%80/Gold/2482.%E2%80%85%EC%83%89%EC%83%81%ED%99%98/README.md)|
 |2504. 괄호의 값|[링크](./%EB%B0%B1%EC%A4%80/Gold/2504.%E2%80%85%EA%B4%84%ED%98%B8%EC%9D%98%E2%80%85%EA%B0%92/%EA%B4%84%ED%98%B8%EC%9D%98%E2%80%85%EA%B0%92.java)|
 |2565. 전깃줄|[링크](./%EB%B0%B1%EC%A4%80/Gold/2565.%E2%80%85%EC%A0%84%EA%B9%83%EC%A4%84/%EC%A0%84%EA%B9%83%EC%A4%84.java)|
+|2982. 국왕의 방문|[링크](./%EB%B0%B1%EC%A4%80/Gold/2982.%E2%80%85%EA%B5%AD%EC%99%95%EC%9D%98%E2%80%85%EB%B0%A9%EB%AC%B8/%EA%B5%AD%EC%99%95%EC%9D%98%E2%80%85%EB%B0%A9%EB%AC%B8.java)|
 |3055. 탈출|[링크](./%EB%B0%B1%EC%A4%80/Gold/3055.%E2%80%85%ED%83%88%EC%B6%9C/README.md)|
 |31235. 올라올라|[링크](./%EB%B0%B1%EC%A4%80/Gold/31235.%E2%80%85%EC%98%AC%EB%9D%BC%EC%98%AC%EB%9D%BC/%EC%98%AC%EB%9D%BC%EC%98%AC%EB%9D%BC.java)|
 |9019. DSLR|[링크](./%EB%B0%B1%EC%A4%80/Gold/9019.%E2%80%85DSLR/README.md)|
@@ -235,4 +236,4 @@
 |181951. a와 b 출력하기|[링크](./%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/unrated/181951.%E2%80%85a%EC%99%80%E2%80%85b%E2%80%85%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0/README.md)|
 
 
- 🧨Total Solved Problems: 191
+ 🧨Total Solved Problems: 192
