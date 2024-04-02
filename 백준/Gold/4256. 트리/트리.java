@@ -6,11 +6,12 @@ import java.util.StringTokenizer;
 public class Main {
     static int T, N;
     static int[] preorder, inorder;
+    static StringBuilder answer;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
-
+        answer = new StringBuilder();
         T = Integer.parseInt(br.readLine());
         for (int tc = 0; tc < T; tc++) {
             N = Integer.parseInt(br.readLine());
@@ -26,8 +27,9 @@ public class Main {
                 inorder[i] = Integer.parseInt(st.nextToken());
             }
             findPreorder(0, 0, N);
-            System.out.println();
+            answer.append("\n");
         }
+        System.out.println(answer);
     }
 
     private static void findPreorder(int root, int str, int end) {
@@ -35,7 +37,7 @@ public class Main {
             if (preorder[root] == inorder[i]) {
                 findPreorder(root + 1, str, i);
                 findPreorder(root + (i + 1 - str), i + 1, end);
-                System.out.print(preorder[root] + " ");
+                answer.append(preorder[root]).append(" ");
             }
         }
     }
