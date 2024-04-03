@@ -1,132 +1,162 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class Main {
 
-    static class Dust {
-        int x, y, amount;
+	static int boardRow, boardCol, totalTime, cleanerEnd;
+	static int[][] board;
 
-        public Dust(int x, int y, int amount) {
-            this.x = x;
-            this.y = y;
-            this.amount = amount;
-        }
-    }
+	static int[] dx = { -1, 1, 0, 0 };
+	static int[] dy = { 0, 0, -1, 1 };
 
-    static int R, C, T;
-    static int[][] map;
-    static int[][] spread_map;
-    static int[] cleaner = new int[2];
-    static List<Dust> dustList = new ArrayList<>();
+	static class Dust {
+		int x, y, volume;
 
-    static int[] dx = {-1, 0, 1, 0};
-    static int[] dy = {0, 1, 0, -1};
+		public Dust(int x, int y, int volume) {
+			this.x = x;
+			this.y = y;
+			this.volume = volume;
+		}
+	}
 
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
+	static Queue<Dust> dusts;
 
-        R = Integer.parseInt(st.nextToken());
-        C = Integer.parseInt(st.nextToken());
-        T = Integer.parseInt(st.nextToken());
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
 
-        map = new int[R][C];
-        spread_map = new int[R][C];
+		boardRow = Integer.parseInt(st.nextToken());
+		boardCol = Integer.parseInt(st.nextToken());
+		totalTime = Integer.parseInt(st.nextToken());
 
-        int cleanerIndex = 0;
-        for (int i = 0; i < R; i++) {
-            st = new StringTokenizer(br.readLine());
-            for (int j = 0; j < C; j++) {
-                map[i][j] = Integer.parseInt(st.nextToken());
-                if (map[i][j] == -1) {
-                    cleaner[cleanerIndex++] = i;
-                } else if (map[i][j] != 0) {
-                    dustList.add(new Dust(i, j, map[i][j]));
-                }
-            }
-        }
+		board = new int[boardRow][boardCol];
+		for (int i = 0; i < boardRow; i++) {
+			st = new StringTokenizer(br.readLine());
+			for (int j = 0; j < boardCol; j++) {
+				board[i][j] = Integer.parseInt(st.nextToken());
+				if (board[i][j] == -1) {
+					cleanerEnd = i;
+				}
+			}
+		}
+		simulation();
+	}
 
-        for (int time = 0; time < T; time++) {
-            spreadDust();
-            startCleaner();
-            dustList.clear();
-            for (int i = 0; i < R; i++) {
-                for (int j = 0; j < C; j++) {
-                    if (map[i][j] > 0) {
-                        dustList.add(new Dust(i, j, map[i][j]));
-                    }
-                }
-            }
-        }
+	private static void simulation() {
+		for (int time = 0; time < totalTime; time++) {
+			// 1. 미세먼지 확산
+			spreadDust();
+			// 2. 공기 청정기 작동
+			airCleaning();
+		}
+		System.out.println(getTotalDustVolume());
+	}
 
-        int answer = 0;
-        for (Dust dust : dustList) {
-            answer += dust.amount;
-        }
+	private static void spreadDust() {
+		getDust();
+		int[][] newBoard = new int[boardRow][boardCol];
 
-        System.out.println(answer);
-    }
+		while (!dusts.isEmpty()) {
+			Dust curDust = dusts.poll();
+			// 확산할 값이 0인 경우
+			if (curDust.volume < 5) {
+				newBoard[curDust.x][curDust.y] += curDust.volume;
+				continue;
+			}
+			int cnt = 0;
+			int spreadVolume = curDust.volume / 5;
+			for (int i = 0; i < 4; i++) {
+				int nx = curDust.x + dx[i];
+				int ny = curDust.y + dy[i];
 
-    private static void spreadDust() {
-        for (Dust dust : dustList) {
-            int spreadAmount = dust.amount / 5;
-            int spreadCount = 0;
+				if (nx < 0 || nx >= boardRow || ny < 0 || ny >= boardCol) {
+					continue;
+				}
 
-            for (int i = 0; i < 4; i++) {
-                int nx = dust.x + dx[i];
-                int ny = dust.y + dy[i];
+				if (board[nx][ny] == -1) {
+					continue;
+				}
+				cnt++;
+				newBoard[nx][ny] += spreadVolume;
+			}
+			int updateVolume = curDust.volume - cnt * spreadVolume;
+			newBoard[curDust.x][curDust.y] += updateVolume;
+		}
 
-                if (nx >= 0 && nx < R && ny >= 0 && ny < C && map[nx][ny] != -1) {
-                    spread_map[nx][ny] += spreadAmount;
-                    spreadCount++;
-                }
-            }
+		board = newBoard;
+	}
 
-            map[dust.x][dust.y] -= spreadAmount * spreadCount;
-        }
+	private static void getDust() {
+		dusts = new LinkedList<>();
+		for (int row = 0; row < boardRow; row++) {
+			for (int col = 0; col < boardCol; col++) {
+				if (board[row][col] > 0) {
+					dusts.add(new Dust(row, col, board[row][col]));
+				}
+			}
+		}
+	}
 
-        for (int i = 0; i < R; i++) {
-            for (int j = 0; j < C; j++) {
-                map[i][j] += spread_map[i][j];
-                spread_map[i][j] = 0;
-            }
-        }
-    }
-
-    private static void startCleaner() {
-        int top = cleaner[0];
-        int bottom = cleaner[1];
-
+	private static void airCleaning() {
+		int top = cleanerEnd-1;
+        int bottom = cleanerEnd;
+        
+        // 반시계방향
         for (int i = top - 1; i > 0; i--) {
-            map[i][0] = map[i - 1][0];
+            board[i][0] = board[i - 1][0];
         }
-        for (int i = 0; i < C - 1; i++) {
-            map[0][i] = map[0][i + 1];
+        for (int i = 0; i < boardCol - 1; i++) {
+        	board[0][i] = board[0][i + 1];
         }
         for (int i = 0; i < top; i++) {
-            map[i][C - 1] = map[i + 1][C - 1];
+        	board[i][boardCol - 1] = board[i + 1][boardCol - 1];
         }
-        for (int i = C - 1; i > 1; i--) {
-            map[top][i] = map[top][i - 1];
+        for (int i = boardCol - 1; i > 1; i--) {
+        	board[top][i] = board[top][i - 1];
         }
-        map[top][1] = 0;
+        board[top][1] = 0;
 
-        for (int i = bottom + 1; i < R - 1; i++) {
-            map[i][0] = map[i + 1][0];
+        // 시계방향
+        for (int i = bottom + 1; i < boardRow - 1; i++) {
+        	board[i][0] = board[i + 1][0];
         }
-        for (int i = 0; i < C - 1; i++) {
-            map[R - 1][i] = map[R - 1][i + 1];
+        for (int i = 0; i < boardCol - 1; i++) {
+        	board[boardRow - 1][i] = board[boardRow - 1][i + 1];
         }
-        for (int i = R - 1; i > bottom; i--) {
-            map[i][C - 1] = map[i - 1][C - 1];
+        for (int i = boardRow - 1; i > bottom; i--) {
+        	board[i][boardCol - 1] = board[i - 1][boardCol - 1];
         }
-        for (int i = C - 1; i > 1; i--) {
-            map[bottom][i] = map[bottom][i - 1];
+        for (int i = boardCol - 1; i > 1; i--) {
+        	board[bottom][i] = board[bottom][i - 1];
         }
-        map[bottom][1] = 0;
-    }
+        board[bottom][1] = 0;	
+        
+        board[top][0] = -1;
+        board[bottom][0] = -1;
+	}
+
+	private static int getTotalDustVolume() {
+		int totalDustVolume = 0;
+		for (int row = 0; row < boardRow; row++) {
+			for (int col = 0; col < boardCol; col++) {
+				if (board[row][col] > 0) {
+					totalDustVolume += board[row][col];
+				}
+			}
+		}
+		return totalDustVolume;
+	}
+
+//	private static void printBoard() {
+//		for (int row = 0; row < boardRow; row++) {
+//			for (int col = 0; col < boardCol; col++) {
+//				System.out.print(board[row][col] + " ");
+//			}
+//			System.out.println();
+//		}
+//	}
 }
