@@ -7,7 +7,6 @@ import java.util.StringTokenizer;
 public class Main {
 
     final static int MAX_PIECES = 4, MAX_TURN = 1_000;
-    final static int WHITE = 0, RED = 1, BLUE = 2;
 
     static class Piece {
         int num, x, y, dir;
@@ -22,12 +21,10 @@ public class Main {
 
     static class Board {
         int status;
-        boolean isReversed;
         ArrayDeque<Piece> curPieces;
 
         public Board(int status) {
             this.status = status;
-            this.isReversed = false;
             this.curPieces = new ArrayDeque<>();
         }
     }
@@ -52,9 +49,6 @@ public class Main {
             for (int col = 0; col < boardSize; col++) {
                 int status = Integer.parseInt(st.nextToken());
                 checkerBoard[row][col] = new Board(status);
-                if (status == RED) {
-                    checkerBoard[row][col].isReversed = true;
-                }
             }
         }
 
@@ -76,28 +70,27 @@ public class Main {
 
     private static int simulation() {
         for (int turn = 1; turn <= MAX_TURN; turn++) {
-            // 말 이동
             movePieces();
-            if (isFin) {
+            // 게임 종료 조건
+            if(isFin) {
                 return turn;
             }
         }
         return -1;
     }
-    
+
     private static void movePieces() {
         for (int pIdx = 0; pIdx < pieceNum; pIdx++) {
             Piece p = pieces[pIdx];
             int nx = p.x + dx[p.dir];
             int ny = p.y + dy[p.dir];
 
-            // 1-1. 범위를 벗어나거나 파란색일 경우 방향 전환
-            if (outOfRange(nx, ny) || checkerBoard[nx][ny].status == BLUE) {
+            if (outOfRange(nx, ny) || checkerBoard[nx][ny].status == 2) {
+                // 방향 전환
                 p.dir = changeDir(p.dir);
                 nx = p.x + dx[p.dir];
                 ny = p.y + dy[p.dir];
-                // 방향 바꿨을 때도 범위를 벗어나거나 파란색이면 이동하지 않음
-                if (outOfRange(nx, ny) || checkerBoard[nx][ny].status == BLUE) {
+                if (outOfRange(nx, ny) || checkerBoard[nx][ny].status == 2) {
                     continue;
                 }
             }
@@ -111,7 +104,6 @@ public class Main {
         ArrayDeque<Piece> origin = checkerBoard[p.x][p.y].curPieces;
         ArrayDeque<Piece> destination = checkerBoard[nx][ny].curPieces;
 
-        // 1-2. 이동할 말들만 선택
         ArrayDeque<Piece> movePieces = new ArrayDeque<>();
         while (!origin.isEmpty()) {
             Piece top = origin.pollLast();
@@ -119,8 +111,7 @@ public class Main {
             if (top.num == p.num) break;
         }
 
-        // 2. 빨간색인 경우 선택된 말들의 순서를 뒤집음
-        if (checkerBoard[nx][ny].status == RED) {
+        if (checkerBoard[nx][ny].status == 1) {
             ArrayDeque<Piece> temp = new ArrayDeque<>();
             while (!movePieces.isEmpty()) {
                 temp.addLast(movePieces.pollLast());
@@ -128,20 +119,19 @@ public class Main {
             movePieces = temp;
         }
 
-        // 3. 선택된 말들을 새 위치로 이동
         while (!movePieces.isEmpty()) {
             Piece curPiece = movePieces.pollFirst();
             curPiece.x = nx;
             curPiece.y = ny;
             destination.addLast(curPiece);
         }
-
+        
         // 4. 4개 이상 쌓이면 게임 종료
         if (destination.size() >= MAX_PIECES) {
             isFin = true;
         }
     }
-    
+
     private static int changeDir(int dir) {
         if (dir == 1) {
             return 2;
@@ -157,4 +147,3 @@ public class Main {
         return nx < 0 || nx >= boardSize || ny < 0 || ny >= boardSize;
     }
 }
-
