@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Solution {
@@ -28,6 +29,7 @@ public class Solution {
 					film[row][col] = st.nextToken().equals("0");
 				}
 			}
+//			printFilm();
 			minInjection = filmDepth;
 			injection(0, 0);
 			answer.append("#").append(tc).append(" ").append(minInjection).append("\n");
@@ -36,30 +38,29 @@ public class Solution {
 	}
 
 	private static void injection(int depth, int injectCnt) {
-        if (isPass()) {
-			if (minInjection > injectCnt) {
-				minInjection = injectCnt;
-			}
-			return;
-		}
-        
-        if (injectCnt >= minInjection) {
+		
+		if (injectCnt >= minInjection) {
 			return;
 		}
 		
-		if (depth == filmDepth) {
+		if (depth == filmDepth) { 
+			if (isPass()) {
+//				printFilm();
+				if (minInjection > injectCnt) {
+					minInjection = injectCnt;
+				}
+			}
 			return;
 		}
-        
+
 		injection(depth + 1, injectCnt);
 		boolean[] temp = film[depth].clone();
-        
+		
 		fill(depth, A);
 		injection(depth + 1, injectCnt + 1);
-
+		
 		fill(depth, B);
 		injection(depth + 1, injectCnt + 1);
-        
 		film[depth] = temp;
 	}
 
@@ -68,6 +69,7 @@ public class Solution {
 			film[row][col] = value;
 		}
 	}
+	
 	
 	private static boolean isPass() {
 		for (int col = 0; col < filmWidth; col++) {
