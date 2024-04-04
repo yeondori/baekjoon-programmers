@@ -1,120 +1,93 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Solution {
 
-    final static boolean A = true;
-    final static boolean B = false;
-    static int testCase, filmRow, filmCol, standard, minK;
-    static int[] injectionCandidateRows;
-    static boolean[][] film, originFilm;
+	final static boolean A = true, B = false;
 
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st;
-        StringBuilder answer = new StringBuilder();
+	static int testCaseNum, filmWidth, filmDepth, passStandard, minInjection;
+	static boolean[][] film;
 
-        testCase = Integer.parseInt(br.readLine().trim());
-        for (int tc = 1; tc <= testCase; tc++) {
-            st = new StringTokenizer(br.readLine());
-            filmRow = Integer.parseInt(st.nextToken());
-            filmCol = Integer.parseInt(st.nextToken());
-            standard = Integer.parseInt(st.nextToken());
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st;
+		StringBuilder answer = new StringBuilder();
+		testCaseNum = Integer.parseInt(br.readLine());
+		for (int tc = 1; tc <= testCaseNum; tc++) {
+			st = new StringTokenizer(br.readLine());
+			filmDepth = Integer.parseInt(st.nextToken());
+			filmWidth = Integer.parseInt(st.nextToken());
+			passStandard = Integer.parseInt(st.nextToken());
 
-            film = new boolean[filmRow][filmCol];
-            originFilm = new boolean[filmRow][filmCol];
-            for (int row = 0; row < filmRow; row++) {
-                st = new StringTokenizer(br.readLine().trim());
-                for (int col = 0; col < filmCol; col++) {
-                    film[row][col] = st.nextToken().equals("0") ? A : B;
-                    originFilm[row][col] = film[row][col];
-                }
-            }
-            minK = Integer.MAX_VALUE;
-            getMinK();
-            answer.append("#").append(tc).append(" ").append(minK).append("\n");
-        }
-        System.out.print(answer);
-    }
+			film = new boolean[filmDepth][filmWidth];
+			for (int row = 0; row < filmDepth; row++) {
+				st = new StringTokenizer(br.readLine());
+				for (int col = 0; col < filmWidth; col++) {
+					film[row][col] = st.nextToken().equals("0");
+				}
+			}
+			minInjection = filmDepth;
+			injection(0, 0);
+			answer.append("#").append(tc).append(" ").append(minInjection).append("\n");
+		}
+		System.out.println(answer);
+	}
 
-    private static void getMinK() {
-        if (pass() || standard == 1) {
-            minK = 0;
-            return;
-        }
+	private static void injection(int depth, int injectCnt) {
+        if (isPass()) {
+			if (minInjection > injectCnt) {
+				minInjection = injectCnt;
+			}
+			return;
+		}
+        
+        if (injectCnt >= minInjection) {
+			return;
+		}
+		
+		if (depth == filmDepth) {
+			return;
+		}
+        
+		injection(depth + 1, injectCnt);
+		boolean[] temp = film[depth].clone();
+        
+		fill(depth, A);
+		injection(depth + 1, injectCnt + 1);
 
-        for (int k = 1; k <= filmRow; k++) {
-            injectionCandidateRows = new int[k];
-            if (selectInjectionCandidates(0, 0, k)) {
-                return;
-            }
-        }
-    }
+		fill(depth, B);
+		injection(depth + 1, injectCnt + 1);
+        
+		film[depth] = temp;
+	}
 
-    private static boolean selectInjectionCandidates(int cnt, int start, int k) {
-        if (cnt == k) {
-            if (injection(k)) {
-                return true;
-            }
-            reset();
-            return false;
-        }
-
-        for (int i = start; i < filmRow; i++) {
-            injectionCandidateRows[cnt] = i;
-            if (selectInjectionCandidates(cnt + 1, i + 1, k)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private static boolean injection(int numCandidates) {
-        for (int mask = 0; mask < (1 << numCandidates); mask++) {
-            for (int i = 0; i < numCandidates; i++) {
-                int row = injectionCandidateRows[i];
-                if ((mask & (1 << i)) != 0) {
-                    Arrays.fill(film[row], A);
-                } else {
-                    Arrays.fill(film[row], B);
-                }
-            }
-            if (pass()) {
-                minK = numCandidates;
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private static void reset() {
-        for (int row = 0; row < filmRow; row++) {
-            film[row] = originFilm[row].clone();
-        }
-    }
-
-    private static boolean pass() {
-        for (int col = 0; col < filmCol; col++) {
-            int cnt = 0;
-            boolean temp = film[0][col];
-            for (int row = 0; row < filmRow; row++) {
-                if (film[row][col] == temp) {
-                    cnt++;
-                    if (cnt == standard) {
-                        break;
-                    }
-                } else {
-                    cnt = 1;
-                    temp = film[row][col];
-                }
-            }
-            if (cnt != standard) {
-                return false;
-            }
-        }
-        return true;
-    }
+	private static void fill(int row, boolean value) {
+		for (int col = 0; col < filmWidth; col++) {
+			film[row][col] = value;
+		}
+	}
+	
+	private static boolean isPass() {
+		for (int col = 0; col < filmWidth; col++) {
+			int curColCnt = 0;
+			boolean target = film[0][col];
+			for (int row = 0; row < filmDepth; row++) {
+				if (target == film[row][col]) {
+					curColCnt++;
+				} else {
+					target = film[row][col];
+					curColCnt = 1;
+				}
+				if (curColCnt == passStandard) {
+					break;
+				}
+			}
+			if (curColCnt < passStandard) {
+				return false;
+			}
+		}
+		return true;
+	}
 }
