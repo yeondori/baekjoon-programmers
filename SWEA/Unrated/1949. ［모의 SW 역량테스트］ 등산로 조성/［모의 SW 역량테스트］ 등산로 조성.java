@@ -72,9 +72,8 @@ public class Solution {
                 visited[nx][ny] = false; // 이동 후 방문 해제
             } else if (!useRemove && board[nx][ny] - board[x][y] < MaxRemove) {
                 // 공사해서 이동 가능한 경우
-                int diff = board[nx][ny] - board[x][y];
                 int origin = board[nx][ny];
-                board[nx][ny] -= diff + 1; // 현재 위치보다 1만큼 낮게 설정하여 공사
+                board[nx][ny] = board[x][y] - 1; // 현재 위치보다 1만큼 낮게 설정하여 공사
                 visited[nx][ny] = true;
                 getMaxLength(nx, ny, true, cnt + 1);
                 board[nx][ny] = origin; // 원래 높이로 복원
