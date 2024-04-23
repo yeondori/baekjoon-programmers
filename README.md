@@ -176,6 +176,7 @@
 |22944. 죽음의 비|[링크](./%EB%B0%B1%EC%A4%80/Gold/22944.%E2%80%85%EC%A3%BD%EC%9D%8C%EC%9D%98%E2%80%85%EB%B9%84/%EC%A3%BD%EC%9D%8C%EC%9D%98%E2%80%85%EB%B9%84.java)|
 |2342. Dance Dance Revolution|[링크](./%EB%B0%B1%EC%A4%80/Gold/2342.%E2%80%85Dance%E2%80%85Dance%E2%80%85Revolution/README.md)|
 |23796. 2，147，483，648 게임|[링크](./%EB%B0%B1%EC%A4%80/Gold/23796.%E2%80%852%EF%BC%8C147%EF%BC%8C483%EF%BC%8C648%E2%80%85%EA%B2%8C%EC%9E%84/README.md)|
+|24042. 횡단보도|[링크](./%EB%B0%B1%EC%A4%80/Gold/24042.%E2%80%85%ED%9A%A1%EB%8B%A8%EB%B3%B4%EB%8F%84/README.md)|
 |2482. 색상환|[링크](./%EB%B0%B1%EC%A4%80/Gold/2482.%E2%80%85%EC%83%89%EC%83%81%ED%99%98/README.md)|
 |2504. 괄호의 값|[링크](./%EB%B0%B1%EC%A4%80/Gold/2504.%E2%80%85%EA%B4%84%ED%98%B8%EC%9D%98%E2%80%85%EA%B0%92/%EA%B4%84%ED%98%B8%EC%9D%98%E2%80%85%EA%B0%92.java)|
 |2565. 전깃줄|[링크](./%EB%B0%B1%EC%A4%80/Gold/2565.%E2%80%85%EC%A0%84%EA%B9%83%EC%A4%84/README.md)|
@@ -265,4 +266,4 @@
 |181951. a와 b 출력하기|[링크](./%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/unrated/181951.%E2%80%85a%EC%99%80%E2%80%85b%E2%80%85%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0/README.md)|
 
 
- 🧨Total Solved Problems: 218
+ 🧨Total Solved Problems: 219
