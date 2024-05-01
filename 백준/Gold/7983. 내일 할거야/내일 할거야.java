@@ -55,6 +55,6 @@ public class Main {
             day = hwStart;
         }
 
-        System.out.println(day);
+        System.out.println(hwStart);
     }
 }
