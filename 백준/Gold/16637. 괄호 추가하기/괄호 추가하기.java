@@ -40,13 +40,13 @@ public class Main {
             return;
         }
 
-        int calWithBracket = calculate(operators.get(idx), value, numbers.get(idx+1));
-        recur(idx+1, calWithBracket);
+        int calWithoutBraket = calculate(operators.get(idx), value, numbers.get(idx+1));
+        recur(idx+1, calWithoutBraket);
 
-        if (idx + 2 <= numSize - 1) {
-            int calWithoutBracket = calculate(operators.get(idx),
+        if (idx + 2<= numSize - 1) {
+            int calWithBracket = calculate(operators.get(idx),
                     value, calculate(operators.get(idx + 1), numbers.get(idx + 1), numbers.get(idx + 2)));
-            recur(idx + 2, calWithoutBracket);
+            recur(idx + 2, calWithBracket);
         }
     }
 
