@@ -7,17 +7,18 @@ public class Main {
 
     static StringBuilder finalSequence;
 
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
         finalSequence = new StringBuilder();
 
         int N = Integer.parseInt(br.readLine());
-        List<Integer> negatives = new ArrayList<>();
-        List<Integer> positives = new ArrayList<>();
+        List<Long> negatives = new ArrayList<>();
+        List<Long> positives = new ArrayList<>();
 
         st = new StringTokenizer(br.readLine());
-        int number, zeros = 0;
+        long number, zeros = 0;
         for (int i = 0; i < N; i++) {
             number = Integer.parseInt(st.nextToken());
 
@@ -33,21 +34,21 @@ public class Main {
         Collections.sort(positives, Collections.reverseOrder());
         Collections.sort(negatives);
 
-        Deque<Integer> negSequence = new ArrayDeque();
-        Deque<Integer> povSequence = new ArrayDeque();
+        Deque<Long> negSequence = new ArrayDeque();
+        Deque<Long> povSequence = new ArrayDeque();
 
-        addSequnce(negSequence, negatives);
+        addSequnce(negSequence, negatives, false);
         for (int i = 0; i < zeros; i++) {
             finalSequence.append("0 ");
         }
-        addSequnce(povSequence, positives);
+        addSequnce(povSequence, positives, true);
         System.out.println(finalSequence);
     }
 
-    private static void addSequnce(Deque<Integer> sequence, List<Integer> numbers) {
+    private static void addSequnce(Deque<Long> sequence, List<Long> numbers, boolean isPositive) {
         boolean flag = false;
 
-        for (int number : numbers) {
+        for (long number : numbers) {
             if (flag) {
                 sequence.addFirst(number);
             } else {
@@ -57,13 +58,25 @@ public class Main {
         }
 
         if (!numbers.isEmpty()) {
-            if (Math.abs(sequence.peekFirst()) > Math.abs(sequence.peekLast())) {
-                while (!sequence.isEmpty()) {
-                    finalSequence.append(sequence.pollLast()).append(" ");
+            if (isPositive) {
+                if (sequence.peekFirst() > sequence.peekLast()) {
+                    while (!sequence.isEmpty()) {
+                        finalSequence.append(sequence.pollLast()).append(" ");
+                    }
+                } else {
+                    while (!sequence.isEmpty()) {
+                        finalSequence.append(sequence.pollFirst()).append(" ");
+                    }
                 }
             } else {
-                while (!sequence.isEmpty()) {
-                    finalSequence.append(sequence.pollFirst()).append(" ");
+                if (sequence.peekFirst() > sequence.peekLast()) {
+                    while (!sequence.isEmpty()) {
+                        finalSequence.append(sequence.pollLast()).append(" ");
+                    }
+                } else {
+                    while (!sequence.isEmpty()) {
+                        finalSequence.append(sequence.pollFirst()).append(" ");
+                    }
                 }
             }
         }
