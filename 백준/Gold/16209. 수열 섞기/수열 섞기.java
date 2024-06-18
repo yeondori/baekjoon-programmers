@@ -37,15 +37,15 @@ public class Main {
         Deque<Long> negSequence = new ArrayDeque();
         Deque<Long> povSequence = new ArrayDeque();
 
-        addSequnce(negSequence, negatives, false);
+        addSequnce(negSequence, negatives);
         for (int i = 0; i < zeros; i++) {
             finalSequence.append("0 ");
         }
-        addSequnce(povSequence, positives, true);
+        addSequnce(povSequence, positives);
         System.out.println(finalSequence);
     }
 
-    private static void addSequnce(Deque<Long> sequence, List<Long> numbers, boolean isPositive) {
+    private static void addSequnce(Deque<Long> sequence, List<Long> numbers) {
         boolean flag = false;
 
         for (long number : numbers) {
@@ -58,25 +58,13 @@ public class Main {
         }
 
         if (!numbers.isEmpty()) {
-            if (isPositive) {
-                if (sequence.peekFirst() > sequence.peekLast()) {
-                    while (!sequence.isEmpty()) {
-                        finalSequence.append(sequence.pollLast()).append(" ");
-                    }
-                } else {
-                    while (!sequence.isEmpty()) {
-                        finalSequence.append(sequence.pollFirst()).append(" ");
-                    }
+            if (sequence.peekFirst() > sequence.peekLast()) {
+                while (!sequence.isEmpty()) {
+                    finalSequence.append(sequence.pollLast()).append(" ");
                 }
             } else {
-                if (sequence.peekFirst() > sequence.peekLast()) {
-                    while (!sequence.isEmpty()) {
-                        finalSequence.append(sequence.pollLast()).append(" ");
-                    }
-                } else {
-                    while (!sequence.isEmpty()) {
-                        finalSequence.append(sequence.pollFirst()).append(" ");
-                    }
+                while (!sequence.isEmpty()) {
+                    finalSequence.append(sequence.pollFirst()).append(" ");
                 }
             }
         }
