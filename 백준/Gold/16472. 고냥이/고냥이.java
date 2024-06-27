@@ -9,30 +9,27 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
-        String input = br.readLine();
+        char[] input = br.readLine().toCharArray();
 
-        System.out.println(findMaxLength(N, input));
-    }
+        int answer = 0, str = 0;
+        Map<Character, Integer> alphaCount = new HashMap<>();
 
-    public static int findMaxLength(int N, String s) {
-        int maxLen = 0, start = 0;
-        Map<Character, Integer> charCount = new HashMap<>();
+        char strAlpha, endAlpha;
+        for (int end = 0, len = input.length; end < len; end++) {
+            endAlpha = input[end];
+            alphaCount.put(endAlpha, alphaCount.getOrDefault(endAlpha, 0) + 1);
 
-        for (int end = 0; end < s.length(); end++) {
-            char endChar = s.charAt(end);
-            charCount.put(endChar, charCount.getOrDefault(endChar, 0) + 1);
+            while (alphaCount.size() > N) {
+                strAlpha = input[str];
+                alphaCount.put(strAlpha, alphaCount.get(strAlpha) - 1);
 
-            while (charCount.size() > N) {
-                char startChar = s.charAt(start);
-                charCount.put(startChar, charCount.get(startChar) - 1);
-                if (charCount.get(startChar) == 0) {
-                    charCount.remove(startChar);
+                if (alphaCount.get(strAlpha) == 0) {
+                    alphaCount.remove(strAlpha);
                 }
-                start++;
+                str++;
             }
-            maxLen = Math.max(maxLen, end - start + 1);
+            answer = Math.max(answer, end - str + 1);
         }
-
-        return maxLen;
+        System.out.println(answer);
     }
 }
