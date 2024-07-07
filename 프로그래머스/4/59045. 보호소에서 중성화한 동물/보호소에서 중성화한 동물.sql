@@ -1,0 +1,10 @@
+-- 코드를 입력하세요
+SELECT ANIMAL_ID, ANIMAL_TYPE, NAME
+FROM (
+    SELECT ai.ANIMAL_ID, ai.ANIMAL_TYPE, ai.NAME, SEX_UPON_INTAKE, SEX_UPON_OUTCOME
+    FROM ANIMAL_INS ai
+    JOIN ANIMAL_OUTS ao
+    USING (ANIMAL_ID)
+) animalInOut
+WHERE SEX_UPON_INTAKE like 'Intact%'
+        and SEX_UPON_OUTCOME not like 'Intact%';
