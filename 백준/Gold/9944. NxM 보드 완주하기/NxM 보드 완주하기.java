@@ -64,6 +64,10 @@ public class Main {
     }
 
     private static void dfs(int x, int y, int visitedCount, int moveCount) {
+        if (moveCount > answer) {
+            return;
+        }
+        
         if (visitedCount == blankNum) {
             answer = Math.min(answer, moveCount);
             return;
