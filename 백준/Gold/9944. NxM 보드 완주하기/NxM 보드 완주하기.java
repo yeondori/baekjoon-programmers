@@ -32,9 +32,9 @@ public class Main {
                 input = br.readLine();
                 for (int j = 0; j < M; j++) {
                     if (input.charAt(j) == '*') {
-                        board[i][j] = -1;  // -1 represents obstacle
+                        board[i][j] = -1;
                     } else {
-                        board[i][j] = 0;   // 0 represents empty space
+                        board[i][j] = 0;  
                         blankNum++;
                     }
                 }
@@ -44,7 +44,7 @@ public class Main {
 
             for (int i = 0; i < N; i++) {
                 for (int j = 0; j < M; j++) {
-                    if (board[i][j] == 0) {  // Start DFS from an empty space
+                    if (board[i][j] == 0) { 
                         visited = new boolean[N][M];
                         visited[i][j] = true;
                         dfs(i, j, 1, 0);
