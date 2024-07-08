@@ -1,20 +1,20 @@
 -- 코드를 입력하세요
-SELECT DISTINCT cars.CAR_ID, cars.CAR_TYPE, ROUND((cars.DAILY_FEE * CAST(REPLACE('12%', '%', '') AS DECIMAL) / 100 * 30)) FEE
-FROM CAR_RENTAL_COMPANY_DISCOUNT_PLAN cp
-JOIN (
-    SELECT CAR_ID, CAR_TYPE, DAILY_FEE
-    FROM CAR_RENTAL_COMPANY_CAR cr
-    JOIN CAR_RENTAL_COMPANY_RENTAL_HISTORY ch
-    USING (CAR_ID)
-    WHERE CAR_TYPE in ('세단', 'SUV') 
-        AND (date_format(START_DATE, '%Y-%m-%d') >= "2022-12-01" or
-             date_format(END_DATE, '%Y-%m-%d') < "2022-11-01" )
-    GROUP BY CAR_ID
-) cars
-USING (CAR_TYPE)
-WHERE DURATION_TYPE like '30일%' and 
-(DAILY_FEE * CAST(REPLACE('12%', '%', '') AS DECIMAL) / 100 * 30) between 500000 and 2000000
-ORDER BY FEE desc, CAR_TYPE asc, CAR_ID desc;
+# SELECT cars.CAR_ID, cars.CAR_TYPE, (cars.DAILY_FEE * (1-DISCOUNT_RATE) * 30) FEE
+# FROM CAR_RENTAL_COMPANY_DISCOUNT_PLAN cp
+# JOIN (
+#     SELECT CAR_ID, CAR_TYPE, DAILY_FEE
+#     FROM CAR_RENTAL_COMPANY_CAR cr
+#     JOIN CAR_RENTAL_COMPANY_RENTAL_HISTORY ch
+#     USING (CAR_ID)
+#     WHERE CAR_TYPE in ('세단', 'SUV') 
+#         AND (date_format(START_DATE, '%Y-%m-%d') >= "2022-12-01" or
+#              date_format(END_DATE, '%Y-%m-%d') < "2022-11-01" )
+#     GROUP BY CAR_ID
+# ) cars
+# USING (CAR_TYPE)
+# WHERE DURATION_TYPE like '30일%' and 
+# (DAILY_FEE * (1-DISCOUNT_RATE) * 30) between 500000 and 2000000
+# ORDER BY FEE desc, CAR_TYPE asc, CAR_ID desc;
 
 -- 30일 이상 대여 시, 차종별 DISCOUNT_RATE
 WITH DISCOUNT AS (
