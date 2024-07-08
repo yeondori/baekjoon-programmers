@@ -228,6 +228,7 @@
 |31235. 올라올라|[링크](./%EB%B0%B1%EC%A4%80/Gold/31235.%E2%80%85%EC%98%AC%EB%9D%BC%EC%98%AC%EB%9D%BC/README.md)|
 |3165. 5|[링크](./%EB%B0%B1%EC%A4%80/Gold/3165.%E2%80%855/5.java)|
 |3167. 기차표 검사|[링크](./%EB%B0%B1%EC%A4%80/Gold/3167.%E2%80%85%EA%B8%B0%EC%B0%A8%ED%91%9C%E2%80%85%EA%B2%80%EC%82%AC/%EA%B8%B0%EC%B0%A8%ED%91%9C%E2%80%85%EA%B2%80%EC%82%AC.java)|
+|3661. 생일 선물|[링크](./%EB%B0%B1%EC%A4%80/Gold/3661.%E2%80%85%EC%83%9D%EC%9D%BC%E2%80%85%EC%84%A0%EB%AC%BC/%EC%83%9D%EC%9D%BC%E2%80%85%EC%84%A0%EB%AC%BC.java)|
 |4148. 31게임|[링크](./%EB%B0%B1%EC%A4%80/Gold/4148.%E2%80%8531%EA%B2%8C%EC%9E%84/README.md)|
 |4179. 불！|[링크](./%EB%B0%B1%EC%A4%80/Gold/4179.%E2%80%85%EB%B6%88%EF%BC%81/README.md)|
 |4256. 트리|[링크](./%EB%B0%B1%EC%A4%80/Gold/4256.%E2%80%85%ED%8A%B8%EB%A6%AC/README.md)|
@@ -327,4 +328,4 @@
 |181951. a와 b 출력하기|[링크](./%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/unrated/181951.%E2%80%85a%EC%99%80%E2%80%85b%E2%80%85%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0/a%EC%99%80%E2%80%85b%E2%80%85%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0.java)|
 
 
- 🧨Total Solved Problems: 274
+ 🧨Total Solved Problems: 275
