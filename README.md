@@ -148,6 +148,7 @@
 |12892. 생일 선물|[링크](./%EB%B0%B1%EC%A4%80/Gold/12892.%E2%80%85%EC%83%9D%EC%9D%BC%E2%80%85%EC%84%A0%EB%AC%BC/%EC%83%9D%EC%9D%BC%E2%80%85%EC%84%A0%EB%AC%BC.java)|
 |1301. 비즈 공예|[링크](./%EB%B0%B1%EC%A4%80/Gold/1301.%E2%80%85%EB%B9%84%EC%A6%88%E2%80%85%EA%B3%B5%EC%98%88/%EB%B9%84%EC%A6%88%E2%80%85%EA%B3%B5%EC%98%88.java)|
 |13023. ABCDE|[링크](./%EB%B0%B1%EC%A4%80/Gold/13023.%E2%80%85ABCDE/ABCDE.java)|
+|1344. 축구|[링크](./%EB%B0%B1%EC%A4%80/Gold/1344.%E2%80%85%EC%B6%95%EA%B5%AC/%EC%B6%95%EA%B5%AC.java)|
 |1398. 동전 문제|[링크](./%EB%B0%B1%EC%A4%80/Gold/1398.%E2%80%85%EB%8F%99%EC%A0%84%E2%80%85%EB%AC%B8%EC%A0%9C/%EB%8F%99%EC%A0%84%E2%80%85%EB%AC%B8%EC%A0%9C.java)|
 |1423. 원숭이 키우기|[링크](./%EB%B0%B1%EC%A4%80/Gold/1423.%E2%80%85%EC%9B%90%EC%88%AD%EC%9D%B4%E2%80%85%ED%82%A4%EC%9A%B0%EA%B8%B0/%EC%9B%90%EC%88%AD%EC%9D%B4%E2%80%85%ED%82%A4%EC%9A%B0%EA%B8%B0.java)|
 |14238. 출근 기록|[링크](./%EB%B0%B1%EC%A4%80/Gold/14238.%E2%80%85%EC%B6%9C%EA%B7%BC%E2%80%85%EA%B8%B0%EB%A1%9D/%EC%B6%9C%EA%B7%BC%E2%80%85%EA%B8%B0%EB%A1%9D.java)|
@@ -349,4 +350,4 @@
 |181951. a와 b 출력하기|[링크](./%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/unrated/181951.%E2%80%85a%EC%99%80%E2%80%85b%E2%80%85%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0/a%EC%99%80%E2%80%85b%E2%80%85%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0.java)|
 
 
- 🧨Total Solved Problems: 293
+ 🧨Total Solved Problems: 294
