@@ -1,4 +1,3 @@
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -27,23 +26,21 @@ public class Main {
 
     static void solve() {
         Arrays.sort(numbers);
-        answer = Long.MAX_VALUE;  // 최소값을 찾기 위한 초기화
+        answer = numbers[len-1] - numbers[0];
 
         int str = 0;
         int end = 0;
         while (end < len) {
             long diff = numbers[end] - numbers[str];
-
-            // 조건에 따라 포인터 이동
-            if (diff >= minDiff) {
+            if (diff < minDiff) {
+                end++;
+            } else if (diff > minDiff) {
                 answer = Math.min(answer, diff);
-                str++;  // 조건을 만족하면 str 증가
+                str++;
             } else {
-                end++;  // 조건을 만족하지 않으면 end 증가
+                answer = diff;
+                break;
             }
-
-            // minDiff를 찾으면 더 이상 탐색할 필요 없음
-            if (answer == minDiff) break;
         }
 
         System.out.println(answer);
