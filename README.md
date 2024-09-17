@@ -307,6 +307,7 @@
 |24954. 물약 구매|[링크](./%EB%B0%B1%EC%A4%80/Silver/24954.%E2%80%85%EB%AC%BC%EC%95%BD%E2%80%85%EA%B5%AC%EB%A7%A4/%EB%AC%BC%EC%95%BD%E2%80%85%EA%B5%AC%EB%A7%A4.java)|
 |25206. 너의 평점은|[링크](./%EB%B0%B1%EC%A4%80/Silver/25206.%E2%80%85%EB%84%88%EC%9D%98%E2%80%85%ED%8F%89%EC%A0%90%EC%9D%80/%EB%84%88%EC%9D%98%E2%80%85%ED%8F%89%EC%A0%90%EC%9D%80.java)|
 |2563. 색종이|[링크](./%EB%B0%B1%EC%A4%80/Silver/2563.%E2%80%85%EC%83%89%EC%A2%85%EC%9D%B4/%EC%83%89%EC%A2%85%EC%9D%B4.java)|
+|2564. 경비원|[링크](./%EB%B0%B1%EC%A4%80/Silver/2564.%E2%80%85%EA%B2%BD%EB%B9%84%EC%9B%90/%EA%B2%BD%EB%B9%84%EC%9B%90.java)|
 |2579. 계단 오르기|[링크](./%EB%B0%B1%EC%A4%80/Silver/2579.%E2%80%85%EA%B3%84%EB%8B%A8%E2%80%85%EC%98%A4%EB%A5%B4%EA%B8%B0/%EA%B3%84%EB%8B%A8%E2%80%85%EC%98%A4%EB%A5%B4%EA%B8%B0.java)|
 |2583. 영역 구하기|[링크](./%EB%B0%B1%EC%A4%80/Silver/2583.%E2%80%85%EC%98%81%EC%97%AD%E2%80%85%EA%B5%AC%ED%95%98%EA%B8%B0/%EC%98%81%EC%97%AD%E2%80%85%EA%B5%AC%ED%95%98%EA%B8%B0.java)|
 |2606. 바이러스|[링크](./%EB%B0%B1%EC%A4%80/Silver/2606.%E2%80%85%EB%B0%94%EC%9D%B4%EB%9F%AC%EC%8A%A4/%EB%B0%94%EC%9D%B4%EB%9F%AC%EC%8A%A4.java)|
@@ -368,4 +369,4 @@
 |181951. a와 b 출력하기|[링크](./%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/unrated/181951.%E2%80%85a%EC%99%80%E2%80%85b%E2%80%85%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0/a%EC%99%80%E2%80%85b%E2%80%85%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0.java)|
 
 
- 🧨Total Solved Problems: 312
+ 🧨Total Solved Problems: 313
