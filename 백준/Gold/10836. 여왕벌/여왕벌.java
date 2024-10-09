@@ -1,30 +1,13 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.StringTokenizer;
 
 public class Main {
 
-    static final int GROWTH_TYPE = 3;
-    static int honeyCombSize, days;
-
-    static class Block {
-        int size;
-        int diff;
-
-        Block() {
-            this.size = 1;
-            this.diff = 0;
-        }
-    }
-
-    static Block[][] honeyComb;
-    static List<Integer> growth;
-
-    static int[] dx = {-1, -1, 0};
-    static int[] dy = {0, -1, -1};
+    static int honeyCombSize, days, edgeNum;
+    static int[][] honeyComb;
+    static int[] growth;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -32,76 +15,54 @@ public class Main {
 
         honeyCombSize = Integer.parseInt(st.nextToken());
         days = Integer.parseInt(st.nextToken());
+        edgeNum = 2 * honeyCombSize - 1;
 
-        honeyComb = new Block[honeyCombSize][honeyCombSize];
+        honeyComb = new int[honeyCombSize][honeyCombSize];
         for (int i = 0; i < honeyCombSize; i++) {
             for (int j = 0; j < honeyCombSize; j++) {
-                honeyComb[i][j] = new Block();
+                honeyComb[i][j] = 1; 
             }
         }
+
+        int[] growthSum = new int[edgeNum];
 
         for (int day = 0; day < days; day++) {
             st = new StringTokenizer(br.readLine());
-            growth = new ArrayList<>();
-            for (int growthSize = 0; growthSize < GROWTH_TYPE; growthSize++) {
-                int cnt = Integer.parseInt(st.nextToken());
+            int zeroCount = Integer.parseInt(st.nextToken());
+            int oneCount = Integer.parseInt(st.nextToken());
+            int twoCount = Integer.parseInt(st.nextToken());
 
-                while (cnt-- > 0) {
-                    growth.add(growthSize);
-                }
-            }
-
-            grow();
+            for (int i = 0; i < zeroCount; i++) growthSum[i] += 0;
+            for (int i = zeroCount; i < zeroCount + oneCount; i++) growthSum[i] += 1;
+            for (int i = zeroCount + oneCount; i < edgeNum; i++) growthSum[i] += 2;
         }
 
-        printHoneyComb();
-    }
-
-    static void grow() {
-        int x = honeyCombSize - 1, y = 0;
-        for (int growthSize : growth) {
-            honeyComb[x][y].size += growthSize;
-            honeyComb[x][y].diff = growthSize;
-
-            if (x > 0) {
-                x--;
-            } else {
-                y++;
-            }
+        int idx = 0;
+        for (int i = honeyCombSize - 1; i >= 0; i--) {
+            honeyComb[i][0] += growthSum[idx++];
+        }
+        for (int j = 1; j < honeyCombSize; j++) {
+            honeyComb[0][j] += growthSum[idx++];
         }
 
         for (int i = 1; i < honeyCombSize; i++) {
             for (int j = 1; j < honeyCombSize; j++) {
-                int maxGrowth = 0;
-                for (int d = 0; d < 3; d++) {
-                    int aroundX = i + dx[d];
-                    int aroundY = j + dy[d];
-
-                    if (inRange(aroundX, aroundY)) {
-                        maxGrowth = Math.max(maxGrowth, honeyComb[aroundX][aroundY].diff);
-                    }
-                }
-
-                honeyComb[i][j].size += maxGrowth;
-                honeyComb[i][j].diff = maxGrowth;
+                honeyComb[i][j] = Math.max(honeyComb[i - 1][j], 
+                                           Math.max(honeyComb[i][j - 1], honeyComb[i - 1][j - 1]));
             }
         }
-    }
 
-    static boolean inRange(int x, int y) {
-        return x >= 0 && x < honeyCombSize && y >= 0 && y < honeyCombSize;
+        printHoneyComb();
     }
 
     static void printHoneyComb() {
         StringBuilder answer = new StringBuilder();
         for (int i = 0; i < honeyCombSize; i++) {
             for (int j = 0; j < honeyCombSize; j++) {
-                answer.append(honeyComb[i][j].size)
-                        .append(" ");
+                answer.append(honeyComb[i][j]).append(" ");
             }
             answer.append("\n");
         }
-
-        System.out.println(answer);
+        System.out.print(answer);
     }
 }
