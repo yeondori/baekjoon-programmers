@@ -1,45 +1,42 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Main {
 
-    static ArrayList<Integer> buildingHeights;
+    static ArrayList<Integer> heights;
     static int totalBuildings, visibleFromKahi, visibleFromDanbi;
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        totalBuildings = scanner.nextInt();
-        visibleFromKahi = scanner.nextInt();
-        visibleFromDanbi = scanner.nextInt();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String[] input = br.readLine().split(" ");
+        totalBuildings = Integer.parseInt(input[0]);
+        visibleFromKahi = Integer.parseInt(input[1]);
+        visibleFromDanbi = Integer.parseInt(input[2]);
 
-        buildingHeights = new ArrayList<>();
+        heights = new ArrayList<>();
 
-        if (visibleFromKahi + visibleFromDanbi > totalBuildings + 1) {
+        for (int i = 1; i < visibleFromKahi; i++) {
+            heights.add(i);
+        }
+        heights.add(Math.max(visibleFromKahi, visibleFromDanbi));
+
+        for (int i = visibleFromDanbi - 1; i >= 1; i--) {
+            heights.add(i);
+        }
+
+        if (heights.size() > totalBuildings) {
             System.out.print(-1);
             return;
         }
 
-        for (int i = 1; i < visibleFromKahi; i++) {
-            buildingHeights.add(i);
+        System.out.print(heights.get(0) + " ");
+        for (int i = 0; i < totalBuildings - heights.size(); i++) {
+            System.out.print(1 + " ");
         }
-        buildingHeights.add(Math.max(visibleFromKahi, visibleFromDanbi));
-
-        for (int i = visibleFromDanbi - 1; i >= 1; i--) {
-            buildingHeights.add(i);
-        }
-
-        if (visibleFromKahi == 1) {
-            while (buildingHeights.size() < totalBuildings) {
-                buildingHeights.add(1, 1);
-            }
-        } else {
-            while (buildingHeights.size() < totalBuildings) {
-                buildingHeights.add(0, 1);
-            }
-        }
-        
-        for (int height : buildingHeights) {
-            System.out.print(height + " ");
+        for (int i = 1; i < heights.size(); i++) {
+            System.out.print(heights.get(i) + " ");
         }
     }
 }
