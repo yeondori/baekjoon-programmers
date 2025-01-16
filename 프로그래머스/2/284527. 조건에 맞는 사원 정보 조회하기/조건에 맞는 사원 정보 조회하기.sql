@@ -1,0 +1,15 @@
+SELECT SCORE
+        , EMP_NO
+        , EMP_NAME
+        , POSITION
+        , EMAIL
+FROM (SELECT HE.EMP_NO
+            , SUM(SCORE) SCORE
+            , EMP_NAME
+            , POSITION
+            , EMAIL
+      FROM HR_EMPLOYEES HE, HR_GRADE HG
+      WHERE HE.EMP_NO = HG.EMP_NO
+      GROUP BY HE.EMP_NO
+      ORDER BY SCORE DESC) SCORE_EMPLOYEES
+LIMIT 1;
