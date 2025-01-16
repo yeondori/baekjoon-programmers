@@ -1,15 +1,16 @@
-SELECT SCORE
-        , EMP_NO
-        , EMP_NAME
-        , POSITION
-        , EMAIL
-FROM (SELECT HE.EMP_NO
-            , SUM(SCORE) SCORE
-            , EMP_NAME
-            , POSITION
-            , EMAIL
-      FROM HR_EMPLOYEES HE, HR_GRADE HG
-      WHERE HE.EMP_NO = HG.EMP_NO
-      GROUP BY HE.EMP_NO
-      ORDER BY SCORE DESC) SCORE_EMPLOYEES
-LIMIT 1;
+WITH TOTAL_SCORE AS (
+    SELECT EMP_NO
+            , SUM(SCORE) AS SUM_SCORE
+    FROM HR_GRADE
+    GROUP BY EMP_NO
+)
+SELECT SUM_SCORE AS SCORE
+    , HE.EMP_NO
+    , EMP_NAME
+    , POSITION
+    , EMAIL
+    FROM HR_EMPLOYEES HE, TOTAL_SCORE TS
+    WHERE HE.EMP_NO = TS.EMP_NO
+    AND SUM_SCORE = (
+                        SELECT MAX(SUM_SCORE) 
+                        FROM TOTAL_SCORE);
